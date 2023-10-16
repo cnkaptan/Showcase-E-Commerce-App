@@ -5,7 +5,6 @@ import android.os.Handler
 import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
@@ -17,15 +16,13 @@ import com.yusufmendes.sisterslabgraduationproject.ui.adapter.ViewPagerAdapter
 import com.yusufmendes.sisterslabgraduationproject.databinding.FragmentDetailBinding
 import com.yusufmendes.sisterslabgraduationproject.model.AddToCardRequest
 import com.yusufmendes.sisterslabgraduationproject.ui.util.showSnackBar
-import com.yusufmendes.sisterslabgraduationproject.util.extensions.showSnackBar
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.math.abs
 
-@AndroidEntryPoint
 class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private lateinit var binding: FragmentDetailBinding
-    private val viewModel: DetailViewModel by viewModels()
+    private val viewModel by viewModel<DetailViewModel>()
     private val args: DetailFragmentArgs by navArgs()
     private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var viewPager2: ViewPager2

@@ -9,12 +9,8 @@ import com.yusufmendes.sisterslabgraduationproject.domain.usecases.bag.DeleteToP
 import com.yusufmendes.sisterslabgraduationproject.domain.usecases.bag.GetBagProductUseCase
 import com.yusufmendes.sisterslabgraduationproject.model.CRUD
 import com.yusufmendes.sisterslabgraduationproject.model.ProductX
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-
-@HiltViewModel
-class BagViewModel @Inject constructor(
+class BagViewModel(
     private val getBagProductUseCase: GetBagProductUseCase,
     private val deleteToProductFromBagUseCase: DeleteToProductFromBagUseCase,
     private val clearBagUseCase: ClearBagUseCase

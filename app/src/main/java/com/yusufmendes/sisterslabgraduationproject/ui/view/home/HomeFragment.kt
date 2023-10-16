@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,15 +14,14 @@ import com.yusufmendes.sisterslabgraduationproject.ui.adapter.ProductAdapter
 import com.yusufmendes.sisterslabgraduationproject.databinding.FragmentHomeBinding
 import com.yusufmendes.sisterslabgraduationproject.model.ProductX
 import com.yusufmendes.sisterslabgraduationproject.util.extensions.showSnackBar
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var productAdapter: ProductAdapter
     private lateinit var categoryNameAdapter: CategoryNameAdapter
-    private val viewModel: HomeFragmentViewModel by viewModels()
+    private val viewModel by viewModel<HomeViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

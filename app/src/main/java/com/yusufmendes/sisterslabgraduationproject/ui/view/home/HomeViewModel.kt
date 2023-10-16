@@ -13,13 +13,8 @@ import com.yusufmendes.sisterslabgraduationproject.domain.usecases.home.SearchPr
 import com.yusufmendes.sisterslabgraduationproject.domain.usecases.home.SearchProductUseCase
 import com.yusufmendes.sisterslabgraduationproject.model.Product
 import com.yusufmendes.sisterslabgraduationproject.model.ProductX
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Response
-import javax.inject.Inject
-
-@HiltViewModel
-class HomeFragmentViewModel @Inject constructor(
+class HomeViewModel(
     private val getProductUseCase: GetProductUseCase,
     private val searchProductUseCase: SearchProductUseCase,
     private val categoryUseCase: GetCategoryUseCase,

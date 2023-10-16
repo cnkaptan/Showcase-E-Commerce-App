@@ -7,12 +7,8 @@ import com.yusufmendes.sisterslabgraduationproject.domain.AppResult
 import com.yusufmendes.sisterslabgraduationproject.domain.usecases.detail.AddToBagUseCase
 import com.yusufmendes.sisterslabgraduationproject.model.AddToCardRequest
 import com.yusufmendes.sisterslabgraduationproject.model.CRUD
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-
-@HiltViewModel
-class DetailViewModel @Inject constructor(
+class DetailViewModel(
     private val addToBagUseCase: AddToBagUseCase
 ) :
     ViewModel() {

@@ -8,11 +8,8 @@ import com.yusufmendes.sisterslabgraduationproject.model.DeleteCartRequest
 import com.yusufmendes.sisterslabgraduationproject.model.Product
 import com.yusufmendes.sisterslabgraduationproject.data.remote.ProductAPI
 import com.yusufmendes.sisterslabgraduationproject.domain.AppResult
-import retrofit2.Response
-import javax.inject.Inject
 
-class ProductRepositoryImpl @Inject constructor(private val productAPI: ProductAPI) :
-    ProductRepository {
+class ProductRepositoryImpl(private val productAPI: ProductAPI) : ProductRepository {
 
     override suspend fun getProducts(): AppResult<Product> = productAPI.getProductData()
 
